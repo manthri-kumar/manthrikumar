@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact Me - Dark Theme</title>
   <link rel="stylesheet" href="contact.css">
+  <link rel="icon" href="assist/MK.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
-  <!-- Header with Logo and Navbar -->
   <header>
     <div class="logo">KUMAR MANTHRI</div>
-    <nav>
-      <a href="Portfolio.html">Home</a>
+
+    <div class="hamburger">&#9776;</div> <!-- hamburger icon -->
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
       <a href="certificate.html">Certificates</a>
     </nav>
   </header>
@@ -38,6 +41,15 @@
       <a href="https://www.linkedin.com/in/kumar-manthri-8479bb32a/"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </section>
+  
 
 </body>
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 </html>

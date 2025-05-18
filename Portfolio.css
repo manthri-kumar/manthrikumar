@@ -25,23 +25,77 @@ header {
   z-index: 999;
 }
 
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Logo left, nav links right */
+  align-items: center;
+  background-color: #1e1e1e;
+  color: white;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+/* Logo on the left */
 .logo {
+  font-size: 24px;
   font-weight: bold;
-  font-size: 1.2rem;
-  color: #ffffff;
+  cursor: pointer;
 }
 
-nav a {
-  margin-left: 1.5rem;
+/* Navigation on the right */
+.nav-right {
+  /* Already flex container wrapping nav-links */
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
   text-decoration: none;
-  color: #ffffff;
-  font-weight: 500;
-  transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth hover effect */
+  font-size: 16px;
+  cursor: pointer;
 }
 
-nav a:hover {
-  color: #ff2504; /* Change text color on hover */
-  text-decoration: none; /* Add underline on hover */
+/* Hamburger menu for mobile remains unchanged */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1e1e1e;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px 40px;
+    border: 1px solid #bebbbb;
+    border-radius: 8px;
+    width: 90%;          /* takes 90% of the viewport width */
+    max-width: 600px;    /* max width so it doesn't get too large on bigger phones */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }
 
 
@@ -638,5 +692,3 @@ html {
     max-width: 500px;
   }
 }
-
-

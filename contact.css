@@ -10,51 +10,62 @@ body {
   height: 100vh;
   background-color: black;
   background-image: 
-    linear-gradient(to right, rgba(255, 0, 0, 0.1) 1px, transparent 1px),  /* vertical red lines */
-    linear-gradient(to bottom, rgba(255, 0, 0, 0.1) 1px, transparent 1px), /* horizontal red lines */
-    linear-gradient(to bottom, rgba(255, 0, 0, 0.3), rgba(0, 0, 0, 0) 80%); /* red-to-black fade */
+    linear-gradient(to right, rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 0, 0, 0.3), rgba(0, 0, 0, 0) 80%);
   background-size: 50px 50px, 50px 50px, 100% 100%;
   background-repeat: repeat;
 }
 
-
-/* Header with Logo and Navbar */
+/* Header */
 header {
   width: 100%;
-  padding: 20px 0;
+  padding: 20px;
   background: #1f1f1f;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-header .logo {
+/* Logo */
+.logo {
   color: #ae2424;
   font-size: 24px;
   font-weight: bold;
-  padding-left: 20px;
-  display: inline-block;
+  cursor: pointer;
 }
 
-header nav {
-  display: inline-block;
-  float: right;
-  padding-right: 20px;
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
 }
 
-header nav a {
+.nav-links a {
   color: #e0e0e0;
   text-decoration: none;
   font-size: 18px;
-  margin-left: 20px;
   padding: 10px;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
-header nav a:hover {
+.nav-links a:hover {
   color: #ae2424;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #e0e0e0;
+  cursor: pointer;
 }
 
 /* Hero Section */
@@ -98,7 +109,7 @@ header nav a:hover {
 }
 
 .hero .btn1:hover {
-  background: #ad2424;
+  background: #c53030;
   transform: translateY(-2px);
 }
 
@@ -108,14 +119,14 @@ header nav a:hover {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  padding-top: 5rem
+  padding-top: 5rem;
 }
 
 .contact h2 {
   font-size: 32px;
   margin-bottom: 10px;
   color: white;
-  padding-top: 3rem
+  padding-top: 3rem;
 }
 
 .underline {
@@ -165,7 +176,7 @@ form button {
 }
 
 form button:hover {
-  background: #f4b1b1;
+  background: #c53030;
   transform: translateY(-2px);
 }
 
@@ -186,4 +197,32 @@ form button:hover {
 .social-icons a:hover {
   color: #ffffff;
   transform: scale(1.2);
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1e1e1e;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 40px;
+    border: 1px solid #bebbbb;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
 }

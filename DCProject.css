@@ -232,3 +232,62 @@ footer {
   background-color: #fbfbfb;
   transform: scale(1.05);
 }
+/* Base styles are assumed to be for desktop */
+
+/* Medium Devices - Tablets (768px and below) */
+@media (max-width: 768px) {
+  header .container, 
+  .about-container,
+  .hero .container,
+  .features .container,
+  .contact .container,
+  footer .container {
+      flex-direction: column;
+      text-align: center;
+      padding: 0 1rem;
+  }
+
+  nav a {
+      display: block;
+      margin: 10px 0;
+  }
+
+  .project-image img {
+      max-width: 100%;
+      height: auto;
+  }
+
+  .feature-list {
+      flex-direction: column;
+      gap: 2rem;
+  }
+
+  .btn-group {
+      flex-direction: column;
+      gap: 10px;
+  }
+}
+
+/* Small Devices - Phones (480px and below) */
+@media (max-width: 480px) {
+  h1.logo {
+      font-size: 1.5rem;
+  }
+
+  .hero-content h2.project-title {
+      font-size: 1.8rem;
+  }
+
+  .tagline {
+      font-size: 1rem;
+  }
+
+  .cta-btn {
+      font-size: 0.9rem;
+      padding: 0.6rem 1rem;
+  }
+
+  .tech-list li {
+      font-size: 0.9rem;
+  }
+}

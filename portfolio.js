@@ -18,6 +18,7 @@ const observer = new IntersectionObserver((entries, observer) => {
   });
 }, observerOptions);
 
+
 // Observe all sections and project cards
 sections.forEach(section => {
   observer.observe(section);
@@ -31,6 +32,23 @@ if (socialSidebar) {
   observer.observe(socialSidebar);
 }
 
+
+ function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    if (navLinks.style.display === "flex") {
+      navLinks.style.display = "none";
+    } else {
+      navLinks.style.display = "flex";
+    }
+  }
+
+  const navLinkElements = document.querySelectorAll("#navLinks a");
+  navLinkElements.forEach(link => {
+    link.addEventListener("click", () => {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.style.display = "none";
+    });
+  });
 
 
 
