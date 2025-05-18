@@ -230,6 +230,14 @@ header {
 .social-sidebar img:hover {
   filter: brightness(1000%) contrast(200%);
 }
+@media (max-width: 768px) {
+  #social-sidebar, .social-sidebar {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
 
 
 

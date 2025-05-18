@@ -50,5 +50,28 @@ if (socialSidebar) {
     });
   });
 
+function moveSocialSidebar() {
+  const socialSidebar = document.getElementById('social-sidebar');
+  const mobilePlaceholder = document.getElementById('mobile-social-placeholder');
+
+  if(window.innerWidth <= 768) {
+    // Move social-sidebar into menu on mobile
+    if (!mobilePlaceholder.contains(socialSidebar)) {
+      mobilePlaceholder.appendChild(socialSidebar);
+      socialSidebar.style.display = 'block';  // show inside menu
+    }
+  } else {
+    // Move it back outside on desktop
+    const originalParent = document.body;  // Or wherever it was originally
+    if (!originalParent.contains(socialSidebar)) {
+      originalParent.appendChild(socialSidebar);
+      socialSidebar.style.display = 'block';  // show on desktop
+    }
+  }
+}
+
+// Run on page load and window resize
+window.addEventListener('load', moveSocialSidebar);
+window.addEventListener('resize', moveSocialSidebar);
 
 
